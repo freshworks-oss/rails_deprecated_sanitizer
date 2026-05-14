@@ -240,7 +240,7 @@ module HTML
     # Throws InvalidSelectorError is the selector expression is invalid.
     def initialize(selector, *values)
       raise ArgumentError, "CSS expression cannot be empty" if selector.empty?
-      @source = ""
+      @source = String.new
       values = values[0] if values.size == 1 && values[0].is_a?(Array)
 
       # We need a copy to determine if we failed to parse, and also
