@@ -166,7 +166,7 @@ module HTML #:nodoc:
               value = true
               if scanner.scan(/\s*=\s*/)
                 if delim = scanner.scan(/['"]/)
-                  value = ""
+                  value = String.new
                   while text = scanner.scan(/[^#{delim}\\]+|./)
                     case text
                       when "\\" then
