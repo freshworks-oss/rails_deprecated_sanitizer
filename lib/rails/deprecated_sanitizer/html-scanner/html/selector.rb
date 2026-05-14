@@ -654,7 +654,7 @@ module HTML
           @source << ":content('#{content}')"
           content = Regexp.new("^#{Regexp.escape(content.to_s)}$") unless content.is_a?(Regexp)
           pseudo << lambda do |element|
-            text = ""
+            text = String.new
             for child in element.children
               unless child.tag?
                 text << child.content
