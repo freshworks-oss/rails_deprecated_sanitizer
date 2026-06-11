@@ -23,7 +23,7 @@ module HTML #:nodoc:
 
     # Create a new Tokenizer for the given text.
     def initialize(text)
-      text.encode!
+      text.dup.encode!
       @scanner = StringScanner.new(text)
       @position = 0
       @line = 0
